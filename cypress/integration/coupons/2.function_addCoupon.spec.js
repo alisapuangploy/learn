@@ -14,10 +14,6 @@ describe('Add Counpon Function', () => {
     cy.location('pathname').should('eq', '/allmember/coupons');
   })
 
-  //   cy.get('input[name="txtSaleStartAtDatetime"]').invoke('attr', 'value').then((text) => {
-  //     expect(Cypress.moment().format('YYYY, MMM DD - 00:00')).to.equal(text);
-  //   });
-
   it('Verify result when user update data successfully', () => {
     cy.get('a.btn-primary').contains('เพิ่มรางวัล').click();
     cy.location('pathname').should('eq', '/allmember/coupons/add-edit');
@@ -25,8 +21,8 @@ describe('Add Counpon Function', () => {
       couponFunction.enterCouponDetail(data);
     });
     cy.get('button[type=submit]').should('be.visible').click()
-    .location('pathname').should('eq', '/allmember/coupons')
-    .wait(500);
+    .location('pathname').should('eq', '/allmember/coupons/add-edit')
+    .wait(500).location('pathname').should('eq', '/allmember/coupons');
   })
 
   it('Verify coupon detail', () => {

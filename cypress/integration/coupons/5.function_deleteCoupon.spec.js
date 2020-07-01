@@ -12,11 +12,17 @@ describe('Delete Counpon Function', () => {
     cy.location('pathname').should('eq', '/allmember/coupons');
   })
 
+  beforeEach(() => {
+    cy.fixture('dataTest/couponDataTest2.json').as('data');
+  })
+
   it('Verify adding of coupon', () => {
-    cy.get('div.item-header:last').children().eq(0)
-    .should('have.class', 'item-header-title')
-    .and('contain', 'Coupon_Today').then((href) => {
-      cy.get('div.item-header-controls').children().get('i.fa-trash:last').click();
+    cy.get('@data').then(data => {
+      cy.get('div.item-header:last').children().eq(0)
+        .should('have.class', 'item-header-title')
+        .and('contain', data.couponName).then((href) => {
+          cy.get('div.item-header-controls').children().get('i.fa-trash:last').click();
+        })
     })
   })
 })
