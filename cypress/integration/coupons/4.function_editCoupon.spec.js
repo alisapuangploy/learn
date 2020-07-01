@@ -23,17 +23,12 @@ describe('Edit Coupon Function', () => {
     });
     cy.get('div.item-header-controls:last').children().eq(1).click()
       .location('pathname').then(path => {
-        cy.url().should('eq', 'https://allmember-cms-qa.7eleven.io' + path);
+        cy.get('@dataEdit').then(data => {
+          couponFunction.enterCouponDetail(data);
+          cy.get('button[type=submit]').should('be.visible').click()
+            .url().should('eq', 'https://allmember-cms-qa.7eleven.io' + path).wait(5000)
+        });
       });
-    cy.get('@dataEdit').then(data => {
-      couponFunction.enterCouponDetail(data);
-
-      cy.get('button[type=submit]').should('be.visible').click()
-        .wait(500);
-      cy.url().should('eq', 'https://allmember-cms-qa.7eleven.io/allmember/coupons', {
-        timeout: 60000
-      });
-    });
   })
 
   it('Verify coupon detail', () => {
