@@ -1,0 +1,19 @@
+{
+  "name": "7_11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "xlsx": "^0.16.2"
+  },
+  "devDependencies": {
+    "cypress": "^4.8.0",
+    "cypress-file-upload": "^4.0.7",
+    "cypress-slack-reporter": "^0.8.0"
+  },
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "author": "",
+  "license": "ISC"
+}

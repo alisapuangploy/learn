@@ -1,0 +1,19 @@
+{
+    "CouponId": "",
+    "couponName": "Coupon_Today",
+    "txtSaleStartAtDatetime": "2020/09/01",
+    "txtStartAtDatetime": "2020/10/01",
+    "cuttingPoint": 100,
+    "promotionCode": "Promo_001",
+    "GSDeductCampaignQty": 12,
+    "PromotionName": "D_001",
+    "Description": "",
+    "maxlenge": 500,
+    "txtSaleExpireAtDatetime": "2020/09/01",
+    "txtExpireAtDatetime": "2020/10/01",
+    "ProjectCode": "Project_001",
+    "GSDeductCampaignId": "Camp_001",
+    "txtTermsAndConditions": "https://www.7eleven-dev.mobi/valentine2020/info-mcoupon.html",
+    "image0": "../fixtures/image/couponlist2.jpg",
+    "image1": "../fixtures/image/couponDetail2.jpg"
+}
